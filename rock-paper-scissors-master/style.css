@@ -1,0 +1,215 @@
+@import url("https://fonts.google.com/specimen/Barlow+Semi+Condensed");
+body {
+  background-image: radial-gradient(#1f3756, #141539);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.d-flex, .container, .container .row, .scroreboard, .scroreboard__score, .circle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.no-wrap {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.w-100, .container, .container .row, .container .col, .scroreboard {
+  width: 100%;
+}
+
+.justify-content-center, .container .row.justify-content-center, .scroreboard__score, .circle {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.justify-content-between, .container .row.justify-content-between, .scroreboard {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.align-items-start {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.align-items-center, .container .row.align-items-center, .scroreboard__score {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.horizontal-padding, .container {
+  padding: 0px 15px;
+}
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+}
+
+.container .row {
+  margin: 0px -15px;
+}
+
+.container .col {
+  display: block;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.scroreboard {
+  border: 1px solid #606e85;
+  border-radius: 10px;
+  margin: 10px 0px;
+  padding: 15px;
+  color: #fff;
+}
+
+.scroreboard__title {
+  font-weight: 600;
+  margin: 0;
+}
+
+.scroreboard__score {
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #3e52a3;
+  font-weight: 600;
+  background: white;
+  width: 90px;
+}
+
+.scroreboard__score .score {
+  display: block;
+  font-size: 1.8rem;
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+  color: #606e85;
+}
+
+.no-groink {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+.auto-groink {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+.pos-absolute, .circle {
+  position: absolute;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border: 0px;
+  padding: 0px;
+  cursor: pointer;
+  outline: none;
+}
+
+.circle img {
+  -webkit-transition: -webkit-transform .33s ease;
+  transition: -webkit-transform .33s ease;
+  transition: transform .33s ease;
+  transition: transform .33s ease, -webkit-transform .33s ease;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.circle:hover img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.circle * {
+  pointer-events: none;
+}
+
+.circle > div {
+  height: inherit;
+}
+
+.circle .white {
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  top: 15px;
+  background-color: #fff;
+  border-radius: 100%;
+}
+
+.circle.papper {
+  top: -75px;
+  left: -75px;
+  background: linear-gradient(25deg, #4865f4 0%, #5671f5 100%);
+}
+
+.circle.scs {
+  top: -75px;
+  right: -75px;
+  background: #ec9e0e;
+  background: linear-gradient(25deg, #ec9e0e 0%, #eca922 100%);
+}
+
+.circle.rock {
+  bottom: -75px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background: linear-gradient(25deg, #dc2e4e 0%, #dd405d 100%);
+}
+/*# sourceMappingURL=style.css.map */

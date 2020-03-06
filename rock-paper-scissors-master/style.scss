@@ -1,0 +1,183 @@
+@import url('https://fonts.google.com/specimen/Barlow+Semi+Condensed');
+
+body{
+    background-image: radial-gradient(hsl(214, 47%, 23%) , hsl(237, 49%, 15%));
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}  
+*{
+    box-sizing: border-box;
+}
+.d-none{
+    display: none!important;
+}
+.d-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.h-100{
+    height: 100%;
+}
+.flex-column{
+    flex-direction: column;
+}
+.no-wrap{
+    flex-wrap: nowrap;
+}
+.w-100{
+    width: 100%;
+}
+.justify-content-center{
+    justify-content: center;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.align-items-start{
+    align-items: start;
+}
+.align-items-center{
+    align-items: center;
+}
+.horizontal-padding{
+    padding:0px 15px;
+}
+.container{
+    @extend .d-flex;
+    max-width: 1140px;
+    margin: auto;
+    @extend .w-100,.horizontal-padding;
+    .row{
+        @extend .d-flex,.w-100;
+        margin: 0px -15px;
+        &.align-items-center{
+            @extend .align-items-center;
+        }
+        &.justify-content-center{
+            @extend .justify-content-center;
+        }
+        &.justify-content-between{
+            @extend .justify-content-between;
+        }
+    }
+    .col{
+        display: block;
+        @extend .w-100;
+    }
+}
+.text-uppercase{
+    text-transform: uppercase;
+}
+@mixin borderRadius($rad){
+    border-radius: $rad;
+}
+@mixin fontWeight($weight:400){
+    font-weight: $weight;
+}
+@mixin fontSize($size: .875rem) {
+    font-size: $size;
+}
+.scroreboard{
+    @extend .d-flex,.w-100,.justify-content-between;
+    border:1px solid hsl(217, 16%, 45%);
+    @include borderRadius(10px);
+    margin: 10px 0px;
+    padding: 15px;
+    color: #fff;
+    &__title{
+        font-weight: 600;
+        margin: 0;
+    }
+    &__score{
+        @extend .d-flex,.justify-content-center,.align-items-center;
+        @include borderRadius(10px);
+        @include fontWeight(600);
+        @include fontSize(.875rem);
+        flex-direction: column;
+        line-height: 1;
+        text-transform: uppercase;
+        color:hsl(228, 45%, 44%);
+        font-weight: 600;
+        .score{
+            display: block;
+            @include fontSize(1.8rem);
+            width: 100%;
+            text-align: center;
+            margin-top: 5px;
+            color:hsl(217, 16%, 45%);
+        }
+        background: white;
+        width:90px;
+    }
+}
+
+.no-groink{
+    flex: 0 0 auto;
+}
+.auto-groink{
+    flex: 1 1 auto;
+}
+.pos-relative{
+    position: relative;
+}
+.pos-absolute{
+    position: absolute;
+}
+.circle{
+    $dim : 150;
+    @extend .pos-absolute,.d-flex,.justify-content-center;
+    width: #{$dim}px;
+    height: #{$dim}px;
+    border-radius: 100%;
+    background-repeat:no-repeat;
+    background-size: 100%;
+    border: 0px;
+    padding: 0px;
+    cursor: pointer;
+    outline: none;
+    img{
+        transition: transform .33s ease;
+        transform: scale(1);
+    }
+    &:hover{
+        img{
+          transform: scale(1.2);
+        }
+    }
+    *{
+        pointer-events: none;
+    }
+    > div{
+        height: inherit;
+    }
+    .white{
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        top: 15px;
+        background-color: #fff;
+        border-radius: 100%;
+    }
+    &.papper{
+        top: -#{($dim / 2)}px;
+        left: -#{($dim / 2)}px; 
+        background: linear-gradient(25deg, hsl(230, 89%, 62%) 0%, hsl(230, 89%, 65%) 100%);
+    }
+    &.scs{
+        top: -#{($dim / 2)}px;
+        right: -#{($dim / 2)}px;
+        background: rgb(236,158,14);
+        background: linear-gradient(25deg, rgba(236,158,14,1) 0%, rgba(236,169,34,1) 100%);
+    }
+    &.rock{
+        bottom: -#{($dim / 2)}px;
+        left: 0;
+        right:0;
+        margin: 0 auto;
+        background: linear-gradient(25deg, hsl(349, 71%, 52%) 0%, hsl(349, 70%, 56%) 100%);
+    }
+}
