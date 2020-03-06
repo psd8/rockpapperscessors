@@ -17,5 +17,5 @@ function animateSlectionDiv(){
     hideSelectionDiv();
 }
 function hideSelectionDiv(){
-    document.querySelector('div.selection-on').classList.add('d-none');
+    document.querySelector('div.selection-on').classList.add('d-none')
 }
